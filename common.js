@@ -1,0 +1,6 @@
+const insta='https://www.instagram.com/manofriseur?evlk=MThncG5lenJ5c3dwZQ==';
+const igIcon='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="18" cy="6" r="1" fill="currentColor"/></svg>';
+const pages=[['index.html','Startseite'],['galerie.html','Bilder'],['booking.html','Termin buchen'],['preise.html','Preise'],['kontakt.html','Kontakt']];
+const current=location.pathname.split('/').pop()||'index.html';
+document.querySelector('#site-header').innerHTML=`<header><div class="nav"><a class="brand" href="index.html"><img class="brand-logo" src="images/logo.png" alt="Mano Logo">MANO <span>SALON</span></a><nav aria-label="Hauptnavigation">${pages.map(([url,label])=>`<a class="${current===url?'active':''}" href="${url}">${label}</a>`).join('')}</nav></div></header>`;
+document.querySelector('#site-footer').innerHTML=`<footer><a class="brand" href="index.html">MANO <span>SALON</span></a><p>Untere Hauptstraße 1 · 3071 Böheimkirchen · Österreich</p><p><a href="tel:+436641854531">+43 664 1854531</a></p><a class="social" href="${insta}" target="_blank" rel="noopener">${igIcon} @manofriseur</a><p>© ${new Date().getFullYear()} Mano Salon · Alle Rechte vorbehalten</p></footer>`;
